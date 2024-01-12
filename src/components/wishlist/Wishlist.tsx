@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
 import { StyledWishlist } from "./StyledWishlist";
-
-interface DataPlanetDetail {
-  name?: string;
-  terrain?: string;
-  population?: string;
-}
+import { DataPlanetDetail } from "../../types/planet";
 
 const Wishlist = () => {
   const [data, setData] = useState<DataPlanetDetail[]>([]);

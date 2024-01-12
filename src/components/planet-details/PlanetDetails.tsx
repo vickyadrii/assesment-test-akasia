@@ -4,12 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { StyledPlanetDetails } from "./StyledPlanetDetails";
 import { message } from "antd";
 import Button from "../ui/button/Button";
-
-interface DataPlanetDetail {
-  name?: string;
-  terrain?: string;
-  population?: string;
-}
+import { DataPlanetDetail } from "../../types/planet";
 
 const PlanetDetails = () => {
   const { id } = useParams();
