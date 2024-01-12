@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export const StyledPlanets = styled.div`
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
 
   .planets {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    min-height: 100vh;
+    &__list {
+        padding: 8px;
+        border-bottom: 1px solid #fff;
+    }
   }
 `;
