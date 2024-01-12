@@ -11,7 +11,7 @@ const Home = () => {
       const res = await fetcher.get("/planets");
       setData((prevData) => ({
         ...prevData,
-        results: [...(prevData.results || []), ...res.results],
+        results: [...(prevData.results || []), ...res.data.results],
       }));
     } catch (err) {
       console.error(err);

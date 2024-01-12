@@ -1,3 +1,4 @@
 import HomePage from "./HomePage";
+import PlanetDetailsPage from "./PlanetDetailsPage";
 
-export { HomePage };
+export { HomePage, PlanetDetailsPage };

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHome = styled.div`
-    p {
-        font-size: 24px;
-    }
-`
+  max-width: 1080px;
+  margin: auto;
+  padding: 20px;
+`;

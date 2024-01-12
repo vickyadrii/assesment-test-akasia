@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { StyledPlanets } from "./StyledPlanets";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { Link } from "react-router-dom";
 
 interface Results {
   name: string;
@@ -16,7 +17,6 @@ interface PropsPlanets {
 }
 
 const Planets = ({ data, handleGetData }: PropsPlanets) => {
-  console.log(data);
   const dataPlanet = useMemo(() => {
     return data.results || [];
   }, [data.results]);
@@ -33,11 +33,13 @@ const Planets = ({ data, handleGetData }: PropsPlanets) => {
           hasMore={true} // Adjust based on your total data count
           loader={<p>Loading...</p>}
         >
-          {dataPlanet.map((data, index) => (
-            <div key={index} className="planets__list">
-              <h3>{data.name}</h3>
-              <p>{data.population}</p>
-            </div>
+          {dataPlanet.map(({ name, population }, index) => (
+            <Link to={`${index+1}`}>
+              <div onClick={() => console.log(index + 1)} key={index} className="planets__list">
+                <h3>{name}</h3>
+                <p>{population}</p>
+              </div>
+            </Link>
           ))}
         </InfiniteScroll>
       </div>

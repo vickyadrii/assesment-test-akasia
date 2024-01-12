@@ -20,7 +20,7 @@ fetcher.interceptors.request.use(
 
 fetcher.interceptors.response.use(
   async (response): Promise<AxiosResponse> => {
-    return response.data;
+    return response;
   },
   async (error): Promise<AxiosError> => {
     return Promise.reject(error.response);
