@@ -21,8 +21,8 @@ const Wishlist = () => {
       <h2>Wishlist</h2>
 
       <div className="wishlist">
-        {data.map(({ name, population, terrain }) => (
-          <div className="wishlist__list">
+        {data.map(({ name, population, terrain }, index) => (
+          <div key={index} className="wishlist__list">
             <h3>Nama planet: {name}</h3>
             <p>Area: {terrain}</p>
             <p>Total Populasi: {population}</p>
