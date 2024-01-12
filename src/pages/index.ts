@@ -1,4 +1,5 @@
 import HomePage from "./HomePage";
 import PlanetDetailsPage from "./PlanetDetailsPage";
+import WishlistPage from "./WishlistPage";
 
-export { HomePage, PlanetDetailsPage };
+export { HomePage, PlanetDetailsPage, WishlistPage };

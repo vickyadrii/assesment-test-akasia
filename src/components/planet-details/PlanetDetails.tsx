@@ -3,6 +3,7 @@ import { fetcher } from "../services/fetcher";
 import { useCallback, useEffect, useState } from "react";
 import { StyledPlanetDetails } from "./StyledPlanetDetails";
 import { message } from "antd";
+import Button from "../ui/button/Button";
 
 interface DataPlanetDetail {
   name?: string;
@@ -61,9 +62,7 @@ const PlanetDetails = () => {
         <h3>Area : {data.terrain}</h3>
         <h3>Total Population: {data.population}</h3>
       </div>
-      <button disabled={isLoading} onClick={handleAddToWishlist} className="btn-wishlist">
-        Tambahkan ke Wishlist
-      </button>
+      <Button disabled={isLoading} onClick={handleAddToWishlist}>Tambahkan ke Wishlist</Button>
     </StyledPlanetDetails>
   );
 };

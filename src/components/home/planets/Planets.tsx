@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { StyledPlanets } from "./StyledPlanets";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Link } from "react-router-dom";
+import { Spin } from "antd";
 
 interface Results {
   name: string;
@@ -27,17 +28,12 @@ const Planets = ({ data, handleGetData }: PropsPlanets) => {
         <h1>List Planets:</h1>
       </div>
       <div className="planets">
-        <InfiniteScroll
-          dataLength={dataPlanet.length}
-          next={handleGetData}
-          hasMore={true} // Adjust based on your total data count
-          loader={<p>Loading...</p>}
-        >
+        <InfiniteScroll dataLength={dataPlanet.length} next={handleGetData} hasMore={true} loader={<Spin />}>
           {dataPlanet.map(({ name, population }, index) => (
-            <Link to={`${index+1}`}>
-              <div onClick={() => console.log(index + 1)} key={index} className="planets__list">
-                <h3>{name}</h3>
-                <p>{population}</p>
+            <Link to={`${index + 1}`} key={index}>
+              <div className="planets__list">
+                <h3>Nama planet: {name}</h3>
+                <p>Total Populasi: {population}</p>
               </div>
             </Link>
           ))}
